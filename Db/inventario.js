@@ -1,10 +1,10 @@
 
 
-let neveras= []
+export let neverasdb= []
 
-let televisores= []
+export let televisoresdb= []
 
-let electrodomesticos= []
+export let electrodomesticosdb= []
 
 
-module.exports ={neveras,televisores,electrodomesticos}
+
