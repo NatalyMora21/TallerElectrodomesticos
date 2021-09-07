@@ -1,10 +1,12 @@
-let superElectr =  require("./electrodomesticos")
+import Electrodomesticos from './electrodomesticos.js'
 
-class Nevera extends superElectr.Electrodomesticos{
+export default class Nevera extends Electrodomesticos{
 
-    constructor(consumo, procedencia,litros){
-        super(consumo, procedencia);
+    constructor(consumo, procedencia,stock, litros){
+        super(consumo, procedencia,stock);
         this.litros= litros;
+        this.valortotal= this.getTotal();
+    
 
     }
 
@@ -24,13 +26,8 @@ class Nevera extends superElectr.Electrodomesticos{
     }
 
     getTotal() {
-        return this.obtenerAumento+ super.basePrecio()
+        return this.obtenerAumento()+ super.basePrecio()
 
     }
 
-
-
 }
-
-
-module.exports ={Nevera}

@@ -1,11 +1,13 @@
+import Electrodomesticos from "./electrodomesticos.js";
 
-let superElectr =  require("./electrodomesticos")
-class Televisor extends superElectr.Electrodomesticos{
 
-    constructor(consumo, procedencia,pulgadas, tdt){
-        super(consumo, procedencia);
+export default class Televisor extends Electrodomesticos{
+
+    constructor(consumo, procedencia, stock, pulgadas, tdt){
+        super(consumo, procedencia, stock);
         this.pulgadas= pulgadas;
         this.tdt= tdt
+        this.valortotal= this.getTotal();
 
     }
 
@@ -17,21 +19,19 @@ class Televisor extends superElectr.Electrodomesticos{
         }
         else{
             aumentoTdt=0
-
         }
+        return aumentoTdt
     }
 
     aumentoPulgadas(){
+        let aumentopul;
         if(this.pulgadas>40) {
-            
-            aumentoTdt=super.basePrecio*0.30
+            aumentopul=super.basePrecio*0.30
         }
         else{
-            aumentoTdt=0
-
+            aumentopul=0
         }
-
-        return aumentoTdt
+        return aumentopul
 
     }
 
@@ -44,4 +44,3 @@ class Televisor extends superElectr.Electrodomesticos{
 
 }
 
-module.exports ={Televisor}
