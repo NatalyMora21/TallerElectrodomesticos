@@ -25,10 +25,5 @@ let generarPedido= () => {
 
     facturas.push(nuevaFactura)
 
-
-
 }
 
-export let prueba = ()=>{
-    console.log(Prueba)
-}
