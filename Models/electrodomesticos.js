@@ -1,10 +1,11 @@
-class Electrodomesticos{
+export default class Electrodomesticos{
 
-    constructor(consumo, procedencia){
+    constructor(consumo, procedencia,stock){
         this.consumo= consumo;
         this.procedencia= procedencia
-        
-
+        this.stock= stock
+        this.valortotal= this.basePrecio();
+    
     }
 
     tipoConsumo() {
@@ -30,10 +31,10 @@ class Electrodomesticos{
         let valorprocedencia;
 
         switch(this.procedencia){
-            case "Nacional":
+            case "nacional":
                 valorprocedencia=250000
                 break
-            case "Importado":
+            case "importado":
                 valorprocedencia=350000
                 break
 
@@ -44,9 +45,11 @@ class Electrodomesticos{
 
     basePrecio() {
 
+
+        console.log(this.tipoConsumo()+ this.tipoProcedencia()+"base precios")
+
         return this.tipoConsumo()+ this.tipoProcedencia()
     }
 
 }
 
-module.exports ={Electrodomesticos}
